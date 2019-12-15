@@ -1,0 +1,18 @@
+---
+layout: base
+---
+<article class="post">
+    <h2 class="post__title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+    <time class="post__date" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y년 %m월 %-d일' }}</time>
+    <div class="post__content"> {{
+        content
+        | replace: '<li>[ ]',
+            '<li class="post__checkbox-item"><input type="checkbox" disabled />'
+        | replace: '<li>[x]',
+            '<li class="post__checkbox-item"><input type="checkbox" disabled checked />'
+        | replace: 'h4', 'h6'
+        | replace: 'h3', 'h5'
+        | replace: 'h2', 'h4'
+        | replace: 'h1', 'h3'
+    }}</div>
+</article>

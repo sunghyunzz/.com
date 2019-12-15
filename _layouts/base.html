@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="author" content="{{ site.author }}">
+    <meta name="theme-color" content="#ffffff">
+
+    {% if page.title %}
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta property="og:title" content="{{ page.title }} | {{ site.title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    {% else %}
+    <title>{{ site.title }}</title>
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    {% endif %}
+
+    {% if page.id == 'index' %}
+    <meta property="og:description" content="{{ site.description }}">
+    <meta name="description" content="{{ site.description }}">
+    {% else %}
+    <meta property="og:description" content="{{ content | strip_html | replace: '[ ]', ' ' | replace: '[x]', ' ' | truncatewords: 200 }}">
+    <meta name="description" content="{{ content | strip_html | replace: '[ ]', ' ' | replace: '[x]', ' ' | truncatewords: 200 }}">
+    {% endif %}
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" type="text/css">
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" type="text/css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">
+            <a href="/">💩✍️🏠</a>
+        </h1>
+        <nav class="header__gnb">
+            <ul class="header__gnb__list">
+                <!-- <li class="header__gnb__item"><a rel="author" href="#">about</a></li> -->
+                <li class="header__gnb__item"><a href="/">posts</a></li>
+                <li class="header__gnb__item"><a href="/feed.xml" type="application/rss+xml">rss</a></li>
+            </ul>
+        </nav>
+    </header>
+    {{ content }}
+    <footer class="footer">
+        <ul class="footer__profiles">
+            {% for profile in site.profiles %}
+            <li class="footer__profile"><address><a href="{{ profile.url }}">{{ profile.name }}</a></address></li>
+            {% endfor %}
+        </ul>
+        <p class="footer__license">
+            모든 글과 자료는 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">크리에이티브 커먼즈 저작자표시 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+        </p>
+    </footer>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114927612-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-114927612-1');
+    </script>
+</body>
+</html>

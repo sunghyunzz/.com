@@ -1,0 +1,34 @@
+author: 황성현
+title: hwang.sh
+email: me@sunghyunzz.com
+description: 글을 적을 마땅한 곳이 없어 황성현이 직접 만든 블로그입니다. 가끔 무슨 생각을 하며 사는지 적습니다.
+baseurl: ""
+url: "https://hwang.sh"
+
+profiles:
+  - name: Twitter
+    url: https://twitter.com/_sunghyunzz
+  - name: Github
+    url: https://github.com/sunghyunzz
+  - name: Letterboxd
+    url: https://letterboxd.com/sunghyunzz
+
+sass:
+  sass_dir: css
+  style: compressed
+
+permalink: /posts/:year/:month/:day/:title.html
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - bin
+  - vendor
+  - Makefile
+  - CNAME
+  - .gitignore

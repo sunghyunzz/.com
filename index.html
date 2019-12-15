@@ -1,0 +1,16 @@
+---
+layout: base
+id: index
+last_modified_at: 2018-04-08 00:30:00 +0900
+---
+<main class="posts">
+    <ol class="posts__entries" reversed>
+        {% for post in site.posts %}
+        <li class="posts__entry">
+            <article class="posts__article">
+                <h2 class="posts__article__title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            </article>
+        </li>
+        {% endfor %}
+    </ol>
+</main>
