@@ -19,6 +19,8 @@ sass:
 
 permalink: /posts/:year/:month/:day/:title.html
 
+asset_url: /assets
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
