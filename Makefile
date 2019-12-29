@@ -8,7 +8,7 @@ run:
 
 .PHONY: test
 test: build
-	bundle exec htmlproofer ./_site --assume-extension --check-html --allow-hash-href --disable-external --check-img-http --check-opengraph --enforce-https
+	bundle exec htmlproofer ./_site --assume-extension --check-html --allow-hash-href --disable-external --check-img-http --check-opengraph --enforce-https --check-favicon
 
 .PHONY: upgrade
 upgrade:

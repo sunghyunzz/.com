@@ -6,12 +6,16 @@ baseurl: ""
 url: "https://hwang.sh"
 
 profiles:
+  - name: Instagram
+    url: https://www.instagram.com/sunghyunzz
   - name: Twitter
     url: https://twitter.com/_sunghyunzz
   - name: Github
     url: https://github.com/sunghyunzz
   - name: Letterboxd
     url: https://letterboxd.com/sunghyunzz
+  - name: Steam
+    url: https://steamcommunity.com/id/sunghyunzz
 
 sass:
   sass_dir: css
