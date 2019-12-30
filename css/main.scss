@@ -23,7 +23,7 @@ $fw-bold: 700;
 $fw-semi-bold: 500;
 $fw-normal: 300;
 
-$ruby-opacity: 50%;
+$ruby-opacity: 0.5;
 $ruby-fz: 20%;
 
 html {
@@ -106,17 +106,17 @@ $th-term: (100 - $th-start) / ($th-step - 1);
 @keyframes thunder {
   @for $i from 0 through $th-start - 1 {
     #{$i}% {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 
   @for $i from 0 through $th-step - 1 {
     #{$i * $th-term + $th-start - $th-term / 2}% {
-      opacity: 5%;
+      opacity: 0.05;
     }
 
     #{$i * $th-term + $th-start}% {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 }
