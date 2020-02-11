@@ -3,8 +3,13 @@
 
 @charset "utf-8";
 
-$width-max: 800px;
-$header-margin: 250px;
+$width-max: 880px;
+$break-lg: 700px;
+$break-sm: 500px;
+$break-xs: 420px;
+
+$header-margin: 0px;
+
 $ff: 'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, 돋움, sans-serif;
 
 $typo: rgb(76, 76, 76);
@@ -94,66 +99,47 @@ ul {
   padding-left: $h4;
 }
 
-ruby > rt {
-  font-size: $ruby-fz;
-  opacity: $ruby-opacity;
-}
-
-$th-start: 97;
-$th-step: 5;
-$th-term: (100 - $th-start) / ($th-step - 1);
-
-@keyframes thunder {
-  @for $i from 0 through $th-start - 1 {
-    #{$i}% {
-      opacity: 1;
-    }
-  }
-
-  @for $i from 0 through $th-step - 1 {
-    #{$i * $th-term + $th-start - $th-term / 2}% {
-      opacity: 0.05;
-    }
-
-    #{$i * $th-term + $th-start}% {
-      opacity: 1;
-    }
-  }
+span.original-term {
+  font-size: 70%;
 }
 
 .header {
   display: flex;
   width: 100%;
   max-width: $width-max - $header-margin;
-  margin: 2.5rem 0 4rem 0;
+  margin: 2.5rem 0;
+
+  @media screen and (max-width: $break-lg) {
+    flex-direction: column;
+  }
 
   &__title {
     align-self: flex-start;
     flex-shrink: 0;
 
     a {
-      font-weight: 100;
-      font-size: 7rem;
+      font-weight: 500;
+      font-size: 4.4rem;
       text-decoration: none;
-    }
 
-    ruby {
-      animation: thunder 10s 0s infinite;
-
-      & > rt {
-        opacity: 0%;
+      @media screen and (max-width: $break-sm) {
+        font-size: 3.6rem;
       }
 
-      &:hover > rt {
-        opacity: $ruby-opacity;
+      @media screen and (max-width: $break-xs) {
+        font-size: 2.8rem;
       }
     }
   }
 
   &__gnb {
-    flex-grow: 1;
     align-self: center;
     text-align: center;
+    margin: 0 0 0 1.5rem;
+
+    @media screen and (max-width: $break-lg) {
+      margin: 0;
+    }
 
     &__list {
       display: inline-block;
@@ -173,6 +159,7 @@ $th-term: (100 - $th-start) / ($th-step - 1);
       }
 
       a {
+        font-size: 1.2rem;
         &:before {
           content: '[';
         }
@@ -217,7 +204,7 @@ $th-term: (100 - $th-start) / ($th-step - 1);
 .posts {
   &__entries {
     margin: 0;
-    padding: 0;
+    padding: 0 1.3rem;
   }
 
   &__entry {
@@ -257,10 +244,18 @@ $th-term: (100 - $th-start) / ($th-step - 1);
 
 .post {
   &__img {
-    margin: 2.5rem 0;
+    margin: 1rem 0;
 
-    &--center {
+    &-center {
       text-align: center;
+    }
+
+    img {
+      width: 50%;
+    }
+
+    figcaption {
+      font-size: 85%;
     }
   }
 
@@ -273,7 +268,7 @@ $th-term: (100 - $th-start) / ($th-step - 1);
   }
 
   &__content {
-    margin-top: 3.5rem;
+    margin-top: 1.1rem;
 
     hr {
       margin: $h1 0;
@@ -285,4 +280,14 @@ $th-term: (100 - $th-start) / ($th-step - 1);
   }
 
   margin-bottom: 7.5rem;
+}
+
+#markdown-toc {
+  display: inline-block;
+  float: left;
+  margin: .2rem 2rem 1rem 0;
+  padding: 1rem 1.5rem;
+  border: 1px $point-darker dashed;
+  border-radius: .25rem;
+  list-style-position: inside;
 }
