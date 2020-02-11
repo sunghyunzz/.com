@@ -15,6 +15,7 @@ layout: base
             | replace: 'h3', 'h5'
             | replace: 'h2', 'h4'
             | replace: 'h1', 'h3'
+            | regex_replace: '__(.+?)__', '<span class="original-term">\1</span>'
         }}{% endcapture %}
         {% include anchor-headings.html html=c beforeHeading=true anchorBody="&sect;" %}
     </div>

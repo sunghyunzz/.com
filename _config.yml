@@ -1,7 +1,7 @@
 author: 황성현
-title: 황성현
+title: hwang.sh
 email: me@sunghyunzz.com
-description: 황성현이 가끔 나타나 방귀도 뀌고 트림도 하다 가는 곳
+description: hhh$$$hhh
 baseurl: ""
 url: "https://hwang.sh"
 
@@ -28,6 +28,8 @@ asset_url: /assets
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-regex-replace
+  - jekyll-youtube
 
 exclude:
   - Gemfile
