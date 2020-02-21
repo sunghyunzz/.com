@@ -109,10 +109,6 @@ span.original-term {
   max-width: $width-max - $header-margin;
   margin: 2.5rem 0;
 
-  @media screen and (max-width: $break-lg) {
-    flex-direction: column;
-  }
-
   &__title {
     align-self: flex-start;
     flex-shrink: 0;
@@ -121,14 +117,6 @@ span.original-term {
       font-weight: 500;
       font-size: 4.4rem;
       text-decoration: none;
-
-      @media screen and (max-width: $break-sm) {
-        font-size: 3.6rem;
-      }
-
-      @media screen and (max-width: $break-xs) {
-        font-size: 2.8rem;
-      }
     }
   }
 
@@ -136,10 +124,6 @@ span.original-term {
     align-self: center;
     text-align: center;
     margin: 0 0 0 1.5rem;
-
-    @media screen and (max-width: $break-lg) {
-      margin: 0;
-    }
 
     &__list {
       display: inline-block;
