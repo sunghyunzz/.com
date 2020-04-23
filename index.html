@@ -6,10 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@800&family=Gothic+A1&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg: #f8f9fa;
-            --fc: #212529;
+            --bg: #fff;
+            --fc: #000;
+            --sbg: #ffd43b;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #212529;
+                --fc: #f8f9fa;
+                --sbg: #f76707;
+            }
+        }
+
+        ::selection {
+            background: var(--sbg);
+        }
+
+        ::-moz-selection {
+            background: var(--sbg);
         }
 
         html {
@@ -18,64 +37,53 @@
 
         body {
             display: block;
-            max-width: 768px;
+            max-width: 480px;
             height: calc(100% - 256px);
             margin: 128px auto;
             padding: 0 32px;
             background: var(--bg);
             color: var(--fc);
+            font-family: 'Gothic A1', sans-serif;
             font-size: 16px;
-            font-weight: normal;
+            font-weight: 400;
             word-break: keep-all;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        header {
-            display: flex;
-        }
-
         header h1 {
             text-transform: lowercase;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 0.2em;
+            font-family: 'Crimson Pro', serif;
+            font-size: 62px;
+            font-weight: 800;
             line-height: 1;
+            margin: 55px 0;
         }
-
-        header p {
-            font-size: 14px;
-            font-weight: normal;
-            letter-spacing: 0.1em;
-            line-height: 1;
-            margin-left: 12px;
-            opacity: 0.75;
+        
+        header h1 span {
+            background: var(--sbg);
         }
 
         main {
-            display: flex;
+            display: block;
             width: 100%;
             height: 100%;
-            align-items: center;
+            text-align: justify;
             letter-spacing: 0.1em;
-            line-height: 1.88;
+            line-height: 2.3;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #212529;
-                --fc: #f8f9fa;
-            }
+        main p {
+            margin: 16px 0;
         }
     </style>
 </head>
 <body>
 <header>
-    <h1>hwang.sh</h1>
-    <p>황성현</p>
+    <h1>hwang<span>.</span>sh</h1>
 </header>
 <main>
-    <p>책을 좋아합니다. 커피를 좋아합니다. 영화를 좋아합니다. 약주와 탁주, (일부) 소주, 위스키, 코냑, 와인, 사워 맥주를 좋아합니다. 최근에 시가를 피워보기 시작했습니다. 게임을 즐겨 합니다. 영어를 한국어로 옮기는 일에 관심이 많습니다. 최근에는 철학 텍스트 하나를 번역 중입니다. 뱅크샐러드를 만듭니다. 키토 식단을 따르는 중입니다. 애인과 함께 조용한 동네에서 테이블야자와 함께 지냅니다. 언젠가 인권, 교육, 환경 문제를 해결하는 일을 하고 싶습니다.</p>
+    <p>책을 좋아합니다. 커피를 좋아합니다. 영화를 좋아합니다. 약주와 탁주, (일부) 소주, 위스키, 코냑, 와인, 사워 맥주를 좋아합니다. 최근에 시가를 피워보기 시작했습니다. 게임을 즐겨 합니다. 영어를 한국어로 옮기는 일에 관심이 많습니다. 최근에는 철학 텍스트 하나를 번역 중입니다. 뱅크샐러드를 만듭니다. 키토 식단을 따르는 중입니다. 애인과 조용한 동네에서 테이블야자와 함께 지냅니다. 언젠가 인권, 교육, 환경 문제를 해결하는 일을 하고 싶습니다.</p>
 </main>
 </body>
 </html>
