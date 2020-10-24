@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>&#x27F3;&#x27F3;&#x27F3;</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@800&family=Gothic+A1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -31,16 +31,19 @@
             background: var(--sbg);
         }
 
-        html {
+        html, body {
+            width: 100%;
             height: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            display: block;
             max-width: 480px;
-            height: calc(100% - 256px);
-            margin: 128px auto;
-            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
             background: var(--bg);
             color: var(--fc);
             font-family: 'Gothic A1', sans-serif;
@@ -51,35 +54,119 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        header h1 {
-            text-transform: lowercase;
-            font-family: 'Crimson Pro', serif;
-            font-size: 62px;
-            font-weight: 800;
-            line-height: 1;
-            margin: 55px 0;
+        p {
+            margin: 0;
+            padding: 0;
         }
-        
-        main {
-            display: block;
-            width: 100%;
-            height: 100%;
+
+        #iam {
+            margin: 0;
             text-align: justify;
             letter-spacing: 0.1em;
             line-height: 2.3;
         }
 
-        main p {
-            margin: 16px 0;
+        #hi {
+            cursor: pointer;
+            user-select: none;
         }
     </style>
 </head>
 <body>
-<header>
-    <h1>hwang.sh</h1>
-</header>
-<main>
-    <p>책을 좋아합니다. 커피를 좋아합니다. 영화를 좋아합니다. 약주와 탁주, (일부) 소주, 위스키, 코냑, 와인, 사워 맥주를 좋아합니다. 최근에 시가를 피워보기 시작했습니다. 게임을 즐겨 합니다. 영어를 한국어로 옮기는 일에 관심이 많습니다. 최근에는 철학 텍스트 하나를 번역 중입니다. 뱅크샐러드를 만듭니다. 키토 식단을 따르는 중입니다. 애인과 조용한 동네에서 테이블야자와 함께 지냅니다. 언젠가 인권, 교육, 환경 문제를 해결하는 일을 하고 싶습니다.</p>
-</main>
+<p>
+    <span id="iam"></span>
+    <span id="hi">[&#x27F3;]</span>
+</p>
+<script>
+    const theParagraph = document.getElementById('iam');
+    const sentencesThatDescribeMe = [
+        // 취향 1 (책/글)
+        [
+            "책을 (읽기보다는 사기를 더) 좋아합니다.",
+            "읽지도 않을 책이 책장에 쌓여있지만 그렇다고 또 책을 되팔 생각도 없습니다.",
+            "출근길 버스에서 책 읽기를 좋아합니다.",
+            "책은 사두면 언젠가 읽으리라 생각합니다.",
+            "문학은 잘 읽지 않는 편인데, 거의 유일하게 코맥 매카시와 나쓰메 소세키의 글은 좋아합니다.",
+            "주말에는 주로 사회과학 텍스트를 읽습니다.",
+            "밑줄을 쫙쫙 그어가며 책 읽는 것을 좋아합니다.",
+            "구독하는 잡지가 (무려) 일곱 종류가 넘습니다.",
+        ],
+
+        // 취향 2 (입)
+        [
+            "커피를 좋아합니다. 집에서 드립으로 내려마시는 재미도 있습니다.",
+            "(마시는) 차를 좋아합니다. 기쁘든 우울하든 차를 마시면 항상 도움이 됩니다.",
+            "맥주를 좋아해 맥주 앱을 만든 적도 있습니다. 요즘에는 사워 맥주를 가장 좋아합니다.",
+            "와인을 좋아합니다. 샴페인과 화이트 와인을 주로 좋아합니다.",
+            "한국 술을 무척 좋아합니다. 약주와 탁주를 주로 즐기며 가장 좋아하는 술은 삼해소주입니다.",
+            "코냑을 참 좋아하는데 아직 접할 기회가 많지 않았습니다.",
+            "칵테일을 좋아합니다. 주로 진토닉이나 사이드카를 마십니다.",
+        ],
+
+        // 취향 3 (놀기)
+        [
+            "영화를 좋아합니다. 영화제 중 전주국제영화제를 가장 좋아하여 매해 꼭 가려 합니다.",
+            "보드게임을 좋아하고 특히 어려운 협력 보드게임을 좋아합니다.",
+            "오프라인 방 탈출 게임을 좋아합니다. 그러나 공포 테마는 절대 가지 않습니다. (결코 겁이 많아서 그런 건 아닙니다)",
+            "한가한 주말에 콘솔 게임을 즐겨 합니다. 술 먹고 스팀에 게임을 사두는 버릇이 있습니다.",
+            "퇴근길에 전략적 팀 전투를 한 판씩 합니다. 이번 시즌 마스터 랭크가 목표입니다.",
+            "드라마를 잘 보지는 않지만, 최근에 비밀의 숲을 정주행 했습니다.",
+        ],
+
+        // 관심사
+        [
+            "최근에 시가를 피우며 추리소설 읽는 즐거움을 알았습니다.",
+            "영어를 한국어로 옮기는 일에 관심이 많습니다.",
+            "환경 문제에 관심이 많습니다.",
+            "도시재생에 관심이 많습니다.",
+            "건축에 관심이 많습니다.",
+            "윤리학과 실용주의 철학에 관심이 많습니다.",
+            "교육 문제를 해결하는 일에 관심이 있습니다.",
+            "서울과 지방의 격차를 줄이는 일에 관심이 많습니다.",
+        ],
+
+        // 시도
+        [
+            "월요일마다 육류를 안 먹는 것을 시도 중입니다.",
+            "삶에서 플라스틱 소비를 줄이려 시도 중입니다.",
+        ],
+
+        // 태도
+        [
+            "세상의 격차가 더 줄어들어야 한다고 믿습니다.",
+            "세상이 더 나은 곳이 될 수 있다고 믿습니다.",
+        ],
+
+        // 일
+        [
+            "뱅크샐러드를 만듭니다.",
+            "뱅크샐러드에서 프로덕트 오너로 일합니다.",
+        ],
+
+        // 삶
+        [
+            "배우자와 함께 조용한 동네에서 두 식물을 키우며 지냅니다.",
+        ],
+
+        // 꿈
+        [
+            "30대에 마을을 만드는 게 꿈입니다.",
+            "언젠가 지하에 납골당이 있는 도서관을 짓고 싶습니다.",
+        ],
+    ];
+    
+    function sayHi() {
+        let sentencesToDisplay = [];
+        for (let sentences of sentencesThatDescribeMe) {
+            let sentence = sentences[Math.floor(Math.random() * sentences.length)];
+            sentencesToDisplay.push(sentence);
+        }
+        theParagraph.textContent = sentencesToDisplay.join(' ');
+    }
+
+    document.getElementById('hi').addEventListener('click', sayHi);
+
+    sayHi();
+</script>
 </body>
 </html>
